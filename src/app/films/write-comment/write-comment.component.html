@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col">
+        
+        <h5 class="card-title">Write Comment</h5>
+        
+        <div class="row">
+
+            <div class="col">
+                <div class="alert alert-danger" *ngIf="apiError">{{ apiError }}</div>
+
+                    <form [formGroup]="writeCommentForm" (submit)="btnSubmitHandler()">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <textarea class="form-control" value="write your comment" formControlName="comment"></textarea>
+                                <small *ngIf="formIsSubmitted && gfc.comment.errors" class="text-danger">Required.</small>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
